@@ -11,7 +11,11 @@ public class helado : MonoBehaviour
     
     void Start()
     {
-
+        if (saborHelado != "DDL" && saborHelado != "FRU" && saborHelado != "CHO")
+        {
+            Debug.Log("Sabor de helado incorrecto");
+            return;
+        }
         if (gramos < 250 || gramos > 3000)
         {
             Debug.Log("Cantidad de gramos incorrecta");
@@ -34,10 +38,7 @@ public class helado : MonoBehaviour
             precio = (int)((gramos / 2) * 0.9f);
             Debug.Log("El precio es de " + precio);
         }
-        else
-        {
-            Debug.Log("Sabor de helado no existe");
-            return;
+       
 
         }
 
@@ -45,10 +46,3 @@ public class helado : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
